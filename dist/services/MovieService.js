@@ -39,7 +39,7 @@ const createMovieService = async (req, res, next) => {
     try {
         let newMovie = new MovieModel_1.default(req.body);
         await newMovie.save();
-        res.redirect("/api/movies");
+        res.redirect("/movies");
         // res.status(201).json({
         //     message: "success",
         //     data: savedMovie,
@@ -73,7 +73,7 @@ exports.editMovieService = editMovieService;
 const updateMovieService = async (req, res, next) => {
     try {
         await MovieModel_1.default.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true });
-        res.redirect("/api/movies");
+        res.redirect("/movies");
         // res.status(200).json({
         //     message: "success",
         //     data: updateMovie,
@@ -91,7 +91,7 @@ exports.updateMovieService = updateMovieService;
 const deleteMovieService = async (req, res, next) => {
     try {
         await MovieModel_1.default.findByIdAndDelete(req.params.id);
-        res.redirect("/api/movies");
+        res.redirect("/movies");
         // res.status(200).json({
         //     message: "success",
         //     data: `${deleteMovie.name} Removed`,

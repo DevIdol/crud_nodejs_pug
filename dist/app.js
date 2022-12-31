@@ -29,10 +29,9 @@ mongoose_1.default
     .then(() => console.log(`MongoDB Connected!`))
     .catch((error) => console.log(`Couldn't connect to MongoDB!`, error));
 app.get("/", (req, res) => {
-    res.redirect("/api/movies");
+    res.redirect("/movies");
 });
 //route api
-// app.use("/api/movies", movieRouter);
 app.use("/movies", MovieRoute_1.default);
 //middleware errorhandler
 app.use(ErrorHandler_1.default);
