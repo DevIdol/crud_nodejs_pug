@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 Create Movie
+  form(method='POST', action='/api/movies')
+    .form-group
+      label Title:
+      input(name='name', type='text' required)
+    .form-group
+      label Released Year:
+      input(name='year', type='text' required)
+    .form-group
+      label Rating:
+      input(name='rating', type='text' required)
+    br
+    input.btn-submit(type='submit', value='Add')

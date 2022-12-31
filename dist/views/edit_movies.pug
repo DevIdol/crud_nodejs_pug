@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 Update Movie
+  form(method='POST', action='/api/movies/'+movie._id)
+    .form-group
+      label Title:
+      input(name='name', type='text', value=movie.name required)
+    .form-group
+      label Released Year:
+      input(name='year', type='text', value=movie.year required)
+    .form-group
+      label Rating:
+      input(name='rating', type='text' value=movie.rating required)
+    br
+    input.btn-submit(type='submit', value='Update')

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h3.name Title: #{movie.name}
+  p.year Released Year: #{movie.year}
+  p.rating Rading: #{movie.rating} /10.0
+  p.time Updated On: #{new Date(movie.updatedAt).toDateString()}
+  div.btn-gp
+    a.btn.edit(href='/api/movies/edit/'+movie._id) Edit
+    a.btn.delete.delete-movie(href='/api/movies', data-id=movie._id) Delete

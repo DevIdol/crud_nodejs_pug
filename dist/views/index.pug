@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div.movie-header
+    h2.movie-name #{title}
+    input.search(type="text" placeholder="Search for title")
+  ul.list-group
+    if(movies)
+      each movie in movies
+        li
+          a(href='/api/movies/'+movie._id)= movie.name
+          p.time Created On: #{new Date(movie.createdAt).toDateString()}
+    if(movies.length==0)
+      h4.no-movie No Movies Yet!

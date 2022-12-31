@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Movie App
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    nav.navbar
+      h1
+        a(href='/api/movies') Movie App
+      ul
+        li
+          a(href='/api/movies') Home
+        li
+          a(href='/api/movies/add') Add Movie
+    div.movie-list      
+      block content
+      
+    script(src='/js/jquery.js')
+    script(src='/js/script.js')

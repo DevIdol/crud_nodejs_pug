@@ -1,0 +1,229 @@
+openapi: 3.0.2
+servers:
+  - url: http://127.0.0.1:8000
+info:
+  description: OpenAPI Specification for Movie
+  title: Swagger API Doc for NodeJS Movie App
+  version: 1.0.0
+
+tags:
+  - name: Movies
+    description: Operations about Movies
+
+paths:
+  # Movie Routes
+  /api/movies:
+    get:
+      tags:
+        - Movies
+      summary: Get all movies
+      description: you can check all movies.
+      responses:
+        "200":
+          description: Returns all movies
+    #create movie
+    post:
+      tags:
+        - Movies
+      summary: Create a new movie
+      requestBody:
+        description: Create a new movie
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Movie Name"
+                year:
+                  type: number
+                  example: 2020
+                rating:
+                  type: string
+                  example: "8.5"
+          application/xml:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Movie Name"
+                year:
+                  type: number
+                  example: 2020
+                rating:
+                  type: string
+                  example: "8.5"
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Movie Name"
+                year:
+                  type: number
+                  example: 2020
+                rating:
+                  type: string
+                  example: "8.5"
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: "Movie Name"
+                  year:
+                    type: number
+                    example: 2020
+                  rating:
+                    type: string
+                    example: "8.5"
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: "Movie Name"
+                  year:
+                    type: number
+                    example: 2020
+                  rating:
+                    type: string
+                    example: "8.5"
+        "405":
+          description: Invalid input
+  #update
+  /api/movies/{movieId}:
+    put:
+      tags:
+        - Movies
+      summary: Update a movie
+      operationId: updateMovieId
+      parameters:
+        - name: movieId
+          in: path
+          description: ID of movie to return
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Update an existing movie
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Movie Name"
+                year:
+                  type: number
+                  example: 2022
+                rating:
+                  type: string
+                  example: "9.5"
+      responses:
+        "200":
+          description: Updated Successfully!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: "63a92c374f4f7128f04c955c"
+                  name:
+                    type: string
+                    example: "Updated Movie Name"
+                  year:
+                    type: number
+                    example: 2022
+                  rating:
+                    type: string
+                    example: "9.5"
+                  status:
+                    type: boolean
+                    example: true
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+        "405":
+          description: Invalid input
+
+    #delete
+    delete:
+      tags:
+        - Movies
+      summary: Delete a movie
+      operationId: deleteMovie
+      parameters:
+        - name: movieId
+          in: path
+          description: Movie id to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Deleted Successfully!
+        "400":
+          description: Invalid movie value
+
+    #find
+    get:
+      tags:
+        - Movies
+      summary: Find movie by ID
+      description: This can only be done by the logged in user.
+      operationId: getMovieById
+      parameters:
+        - name: movieId
+          in: path
+          description: ID of movie to return
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: "63a92c374f4f7128f04c955c"
+                  name:
+                    type: string
+                    example: "Movie Name"
+                  year:
+                    type: number
+                    example: 2022
+                  rating:
+                    type: string
+                    example: "9.5"
+                  _v:
+                    type: number
+                    example: 0
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+        "404":
+          description: Movie not found

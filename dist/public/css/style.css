@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: sans-serif;
+}
+body {
+  font-size: 18px;
+  color: #0c0b0b;
+}
+
+h1 a {
+  font-size: 28px;
+  color: #f3410b;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 60px;
+  background-color: #080808;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar ul li a {
+  color: #fff;
+}
+
+.movie-list {
+  padding-top: 40px;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.movie-list .movie-header {
+  display: flex;
+  justify-content: space-between;
+}
+.movie-list .search {
+  align-self: flex-end;
+  width: 50%;
+  padding: 6px;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+.list-group {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.list-group li {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #cccccc66;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-group li a:hover {
+  text-decoration: underline;
+  transition: 0.6s ease;
+}
+.no-movie {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #cccccc66;
+  text-align: center;
+}
+
+.name,
+.year,
+.rating {
+  color: #070505;
+  padding-top: 10px;
+}
+
+.year,
+.rating {
+  font-style: italic;
+  font-size: 14px;
+}
+.time {
+  padding-top: 10px;
+  font-style: italic;
+  font-size: 12px;
+  color: gray;
+}
+
+.btn-gp {
+  padding-top: 30px;
+}
+
+.btn-gp .btn {
+  margin: 10px;
+  padding: 4px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #fff;
+}
+.btn.edit {
+  background-color: #008080;
+}
+.btn.edit:hover {
+  background-color: #042e2e;
+  transition: 0.6s ease;
+}
+.btn.delete {
+  background-color: #ff6347;
+}
+.btn.delete:hover {
+  background-color: #861c09;
+  transition: 0.6s ease;
+}
+
+/* input form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group input:focus {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
+
+.btn-submit {
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #008080;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+}
+.btn-submit:hover {
+  background-color: #042e2e;
+  transition: 0.6s ease;
+}
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200px;
+}
