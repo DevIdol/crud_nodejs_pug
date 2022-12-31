@@ -29,10 +29,9 @@ mongoose
   .catch((error) => console.log(`Couldn't connect to MongoDB!`, error));
 
 app.get("/", (req: Request, res: Response) => {
-  res.redirect("/api/movies");
+  res.redirect("/movies");
 });
 //route api
-// app.use("/api/movies", movieRouter);
 app.use("/movies", movieRouter);
 
 //middleware errorhandler

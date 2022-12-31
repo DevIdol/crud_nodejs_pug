@@ -8,7 +8,7 @@ block content
     if(movies)
       each movie in movies
         li
-          a(href='/api/movies/'+movie._id)= movie.name
+          a(href='/movies/'+movie._id)= movie.name
           p.time Created On: #{new Date(movie.createdAt).toDateString()}
     if(movies.length==0)
       h4.no-movie No Movies Yet!

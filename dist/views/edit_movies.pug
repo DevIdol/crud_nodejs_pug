@@ -2,7 +2,7 @@ extends layout
 
 block content
   h2 Update Movie
-  form(method='POST', action='/api/movies/'+movie._id)
+  form(method='POST', action='/movies/'+movie._id)
     .form-group
       label Title:
       input(name='name', type='text', value=movie.name required)

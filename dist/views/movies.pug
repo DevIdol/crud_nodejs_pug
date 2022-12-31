@@ -6,5 +6,5 @@ block content
   p.rating Rading: #{movie.rating} /10.0
   p.time Updated On: #{new Date(movie.updatedAt).toDateString()}
   div.btn-gp
-    a.btn.edit(href='/api/movies/edit/'+movie._id) Edit
-    a.btn.delete.delete-movie(href='/api/movies', data-id=movie._id) Delete
+    a.btn.edit(href='/movies/edit/'+movie._id) Edit
+    a.btn.delete.delete-movie(href='/movies', data-id=movie._id) Delete

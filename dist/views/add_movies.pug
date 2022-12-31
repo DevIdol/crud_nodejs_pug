@@ -2,7 +2,7 @@ extends layout
 
 block content
   h2 Create Movie
-  form(method='POST', action='/api/movies')
+  form(method='POST', action='/movies')
     .form-group
       label Title:
       input(name='name', type='text' required)

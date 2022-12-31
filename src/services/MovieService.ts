@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express";
 import Movie from "../models/MovieModel";
-import { createError } from "../utils/Error";
 
 //get movies
 export const getMovieService = async (
@@ -42,7 +41,7 @@ export const createMovieService = async (
     try {
         let newMovie: any = new Movie(req.body);
         await newMovie.save();
-        res.redirect("/api/movies");
+        res.redirect("/movies");
         // res.status(201).json({
         //     message: "success",
         //     data: savedMovie,
@@ -86,7 +85,7 @@ export const updateMovieService = async (
             { $set: req.body },
             { new: true }
         );
-        res.redirect("/api/movies");
+        res.redirect("/movies");
         // res.status(200).json({
         //     message: "success",
         //     data: updateMovie,
@@ -107,7 +106,7 @@ export const deleteMovieService = async (
 ) => {
     try {
         await Movie.findByIdAndDelete(req.params.id);
-        res.redirect("/api/movies");
+        res.redirect("/movies");
         // res.status(200).json({
         //     message: "success",
         //     data: `${deleteMovie.name} Removed`,

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/movies/' + id,
+            url: '/movies/' + id,
         });
     });
 
