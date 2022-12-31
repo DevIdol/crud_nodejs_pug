@@ -39,7 +39,8 @@ app.get("/", (req: Request, res: Response) => {
   res.redirect("/api/movies");
 });
 //route api
-app.use("/api/movies", movieRouter);
+// app.use("/api/movies", movieRouter);
+app.use("/movies", movieRouter);
 
 //middleware errorhandler
 app.use(ErrorHandler);
