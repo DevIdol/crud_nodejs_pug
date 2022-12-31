@@ -81,12 +81,18 @@ h1 a {
   background-color: #cccccc66;
   text-align: center;
 }
+.movie-view {
+  margin: 0 auto;
+}
 
 .name,
 .year,
 .rating {
   color: #070505;
   padding-top: 10px;
+}
+.name {
+  font-weight: 500;
 }
 
 .year,
@@ -105,24 +111,24 @@ h1 a {
   padding-top: 30px;
 }
 
-.btn-gp .btn {
+.btn {
   margin: 10px;
   padding: 4px 20px;
   border: 1px solid transparent;
   border-radius: 6px;
   color: #fff;
 }
-.btn.edit {
+.edit {
   background-color: #008080;
 }
-.btn.edit:hover {
+.edit:hover {
   background-color: #042e2e;
   transition: 0.6s ease;
 }
-.btn.delete {
+.delete {
   background-color: #ff6347;
 }
-.btn.delete:hover {
+.delete:hover {
   background-color: #861c09;
   transition: 0.6s ease;
 }
@@ -165,4 +171,29 @@ form {
   align-items: center;
   justify-content: center;
   padding-top: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 20px 10px;
+    justify-content: space-between;
+  }
+  h1 a {
+    font-size: 24px;
+  }
+  .navbar ul {
+    gap: 20px;
+  }
+  .navbar ul li a {
+    font-size: 16px;
+  }
+  .movie-list {
+    width: 96vw;
+  }
+  .movie-name {
+    font-size: 20px;
+  }
+  .list-group li a {
+    font-size: 16px;
+  }
 }
