@@ -9,11 +9,6 @@ PORT = 8000
 MONGODB = mongodb+srv://admin:DoKFfh7mW0Hzb539@cluster0.mwutyii.mongodb.net/movies
 ```
 
-- **URL**
-```
-localhost:8000/api/movies
-```
-
 - **Method**
 
 `GET`
@@ -22,12 +17,10 @@ localhost:8000/api/movies
 `DELETE`
 
 
-
 - **Installation**
 ```
-git clone git@github.com:DevIdol/BIB_Nodejs.git
-cd BIB_Nodejs
-cd "Day18(Tutorial-7)"
+git@github.com:DevIdol/crud_nodejs_pug.git
+cd crud_nodejs_pug
 yarn
 yarn watch
 yarn start
