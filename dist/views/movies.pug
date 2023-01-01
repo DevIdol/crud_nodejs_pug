@@ -2,7 +2,7 @@ extends layout
 
 block content
   div.movie-view
-    h3.name Title: #{movie.name}
+    h3.name #{movie.name}
     p.year Released Year: #{movie.year}
     p.rating Rating: #{movie.rating} /10.0
     p.time Updated On: #{new Date(movie.updatedAt).toDateString()}

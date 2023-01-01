@@ -2,15 +2,26 @@ extends layout
 
 block content
   h2 Create Movie
-  form(method='POST', action='/movies')
+  form(method='POST' action='/movies')
     .form-group
       label Title:
-      input(name='name', type='text' required)
+      input(
+        name='name', 
+        type='text' required)
     .form-group
       label Released Year:
-      input(name='year', type='text' required)
+      input(
+        type='number'
+        min="1980" 
+        max=`${new Date().getFullYear()}` 
+        name="year" required)
     .form-group
       label Rating:
-      input(name='rating', type='text' required)
+      input(
+        type ='number' 
+        step="any" 
+        min="1.0" 
+        max="10.0"
+        name='rating' required)
     br
     input.btn-submit(type='submit', value='Add')
